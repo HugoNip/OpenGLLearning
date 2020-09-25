@@ -32,10 +32,7 @@ Note that you really should use an IDE like [Qt Creator](https://www.qt.io/devel
 
 ## Tutorials
 [Tutorial 1: Opening a window](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-1-opening-a-window/)    
-
 **GLEW** [Source](https://github.com/HugoNip/OpenGLLearning/tree/master/external/glew-1.13.0)    
-
 **GLFW** [Source](https://github.com/HugoNip/OpenGLLearning/tree/master/external/glfw-3.1.2), [Homepage](https://www.glfw.org/), [Compile](https://www.glfw.org/docs/latest/compile.html)    
-
 **OpenGL Mathematics (GLM)** [Source](https://github.com/HugoNip/OpenGLLearning/tree/master/external/glm-0.9.7.1), [Homepage](https://glm.g-truc.net/0.9.9/index.html)    
 
