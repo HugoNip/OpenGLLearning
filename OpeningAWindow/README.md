@@ -30,9 +30,7 @@ Note that you really should use an IDE like [Qt Creator](https://www.qt.io/devel
 * Click on the hammer on the bottom. The tutorials can now be launched from the ```tutorials/``` folder.    
 * To run the tutorials from QtCreator, click on ```Projects->Execution parameters->Working Directory```, and select the directory where the shaders, textures & models live. Example for tutorial 2 : ```~/opengl-tutorial/tutorial02_red_triangle/```     
 
-## Tutorials
-[Tutorial 1: Opening a window](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-1-opening-a-window/)    
-**GLEW** [Source](https://github.com/HugoNip/OpenGLLearning/tree/master/external/glew-1.13.0)    
+## Reference
+**Tutorial** [Homepage](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-1-opening-a-window/)   
 **GLFW** [Source](https://github.com/HugoNip/OpenGLLearning/tree/master/external/glfw-3.1.2), [Homepage](https://www.glfw.org/), [Compile](https://www.glfw.org/docs/latest/compile.html)    
 **OpenGL Mathematics (GLM)** [Source](https://github.com/HugoNip/OpenGLLearning/tree/master/external/glm-0.9.7.1), [Homepage](https://glm.g-truc.net/0.9.9/index.html)    
-
