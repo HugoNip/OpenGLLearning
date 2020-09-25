@@ -17,7 +17,7 @@ Now run the OpenGl program with following command
 ```
 $ ./firstOpenGlApp
 ```
-## Out
+## Output
 ![opengl_out-300x247.png](https://github.com/HugoNip/OpenGLLearning/blob/master/figures/opengl_out-300x247.png)
 
 # Tutorials
