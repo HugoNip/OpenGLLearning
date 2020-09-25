@@ -7,4 +7,10 @@
 // include GLFW. We decided to let GLFW handle the window and the keyboard
 #include <GLFW/glfw3.h>
 
+// We don’t actually need this one right now, but this is a library for 3D mathematics. 
+// It will prove very useful soon. There is no magic in GLM, you can write your own if you want; 
+// it’s just handy. The “using namespace” is there to avoid typing “glm::vec3”, but “vec3” instead.
+#include <glm/glm.hpp>
+using namespace glm;
+
 

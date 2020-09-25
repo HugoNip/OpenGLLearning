@@ -32,5 +32,6 @@ Note that you really should use an IDE like [Qt Creator](https://www.qt.io/devel
 
 ## Tutorials
 [Tutorial 1: Opening a window](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-1-opening-a-window/)    
-[GLFW Source]()   
-[Compile GLFW](https://www.glfw.org/docs/latest/compile.html)    
+[GLEW Source](https://github.com/HugoNip/OpenGLLearning/tree/master/external/glew-1.13.0)    
+[GLFW Source](https://github.com/HugoNip/OpenGLLearning/tree/master/external/glfw-3.1.2), [Compile GLFW](https://www.glfw.org/docs/latest/compile.html)    
+[GLM Source](https://github.com/HugoNip/OpenGLLearning/tree/master/external/glm-0.9.7.1)    
