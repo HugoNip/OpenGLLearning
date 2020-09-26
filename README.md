@@ -20,7 +20,7 @@ $ cmake ..      // A makefile has been created in the build/ directory
 $ make all      // Every tutorial and dependency will be compiled. Each executable will also be copied back into ~/Projects/OpenGLTutorials/
 
 $ cd ~/Projects/OpenGLLearning/tt01_first_window
-$ cd ~/Projects/OpenGLLearning/build
+$ // or cd ~/Projects/OpenGLLearning/build
 $ ./exett01  // A blue window should appear.
 ```
 
