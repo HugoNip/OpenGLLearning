@@ -22,4 +22,4 @@ $ ./firstOpenGlApp
 ![opengl_out-300x247.png](https://github.com/HugoNip/OpenGLLearning/blob/master/figures/opengl_out-300x247.png)
 
 ## Tutorials
-[Intall OpenGL](http://www.codebind.com/linux-tutorials/install-opengl-ubuntu-linux/)    
+[Intalling OpenGL](http://www.codebind.com/linux-tutorials/install-opengl-ubuntu-linux/)    
