@@ -56,18 +56,38 @@ add_definitions(
 	-D_CRT_SECURE_NO_WARNINGS
 )
 
-# Tutorial 1
-add_executable(exett01 tt01_first_window/main.cpp)
-target_link_libraries(exett01 ${ALL_LIBS})
-
 message("CMAKE_CURRENT_SOURCE_DIR: " ${CMAKE_CURRENT_SOURCE_DIR})
 message("CMAKE_CURRENT_BINARY_DIR: " ${CMAKE_CURRENT_BINARY_DIR})
 message("CMAKE_CFG_INTDIR: " ${CMAKE_CFG_INTDIR})
 message("CMAKE_GENERATOR: " ${CMAKE_GENERATOR})
 
+# Tutorial 1
+add_executable(exett01 tt01_first_window/main.cpp)
+
+target_link_libraries(exett01 ${ALL_LIBS})
+
 # Xcode and Visual working directories
 set_target_properties(exett01 PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tt01_first_window/")
 create_target_launcher(exett01 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt01_first_window/")
+
+# Tutorial 2
+add_executable(exett02 tt02_red_triangle/main.cpp 
+						common/shader.cpp	
+						common/shader.hpp
+						tt02_red_triangle/SimpleFragmentShader.fragmentshader
+						tt02_red_triangle/SimpleVertexShader.vertexshader)
+
+target_link_libraries(exett02 ${ALL_LIBS})
+
+# Xcode and Visual working directories
+set_target_properties(exett02 PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tt02_red_triangle/")
+create_target_launcher(exett02 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt02_red_triangle/")
+create_default_target_launcher(exett02 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt02_red_triangle/") # tut 1 is not the default or people would complain that tut 2 doesn't work
+
+
+
+
+
 
 SOURCE_GROUP(common REGULAR_EXPRESSION ".*/common/.*" )
 SOURCE_GROUP(shaders REGULAR_EXPRESSION ".*/.*shader$" )
@@ -77,6 +97,18 @@ add_custom_command(
    TARGET exett01 POST_BUILD
    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett01${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt01_first_window/"
 )
+
+add_custom_command(
+   TARGET exett02 POST_BUILD
+   COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett02${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt02_red_triangle/"
+)
+
+
+
+
+
+
+
 
 elseif (${CMAKE_GENERATOR} MATCHES "Xcode" )
 
