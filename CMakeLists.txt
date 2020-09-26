@@ -70,6 +70,7 @@ target_link_libraries(exett01 ${ALL_LIBS})
 set_target_properties(exett01 PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tt01_first_window/")
 create_target_launcher(exett01 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt01_first_window/")
 
+
 # Tutorial 2
 add_executable(exett02 tt02_red_triangle/main.cpp 
 						common/shader.cpp	
@@ -83,6 +84,25 @@ target_link_libraries(exett02 ${ALL_LIBS})
 set_target_properties(exett02 PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tt02_red_triangle/")
 create_target_launcher(exett02 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt02_red_triangle/")
 create_default_target_launcher(exett02 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt02_red_triangle/") # tut 1 is not the default or people would complain that tut 2 doesn't work
+
+
+# Tutorial 3
+add_executable(exett03 tt03_Matrices/main.cpp
+						common/shader.cpp
+						common/shader.hpp
+
+						tt03_Matrices/SimpleTransform.vertexshader
+						tt03_Matrices/SingleColor.fragmentshader)
+
+#set_target_properties(exett03 PROPERTIES RUNTIME_OUTPUT_DIRECTORY /test1)
+target_link_libraries(exett03 ${ALL_LIBS})
+
+# Xcode and Visual working directories
+set_target_properties(exett03 PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tt03_Matrices/")
+create_target_launcher(exett03 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt03_Matrices/") # Visual
+
+
+
 
 
 
@@ -103,7 +123,10 @@ add_custom_command(
    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett02${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt02_red_triangle/"
 )
 
-
+add_custom_command(
+   TARGET exett03 POST_BUILD
+   COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett03${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt03_Matrices/"
+)
 
 
 
