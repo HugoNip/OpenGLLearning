@@ -105,15 +105,15 @@ And the final diagram :
 
 ### How to understand MVP?
 
-Here’s another diagram so that you understand better what happens with this Projection stuff. Before projection, we’ve got our blue objects, in **Camera Space**, and the red shape represents the frustum of the camera : the part of the scene that the camera is actually able to see.
+Here’s another diagram so that you understand better what happens with this Projection stuff. Before projection, we’ve got our blue objects, in **Camera Space**, and the **red shape** represents the **frustum of the camera** : the part of the scene that the camera is actually able to see.
 
 ![nondeforme.png](https://github.com/HugoNip/OpenGLLearning/blob/master/figures/nondeforme.png)
 
-**Multiplying everything by the Projection Matrix has the following effect** :
+Multiplying everything by the **Projection Matrix** has the following effect :
 
 ![homogeneous.png](https://github.com/HugoNip/OpenGLLearning/blob/master/figures/homogeneous.png)
 
-In this image, the frustum is now a **perfect cube** (between -1 and 1 on all axes, it’s a little bit hard to see it), and all blue objects have been **deformed** in the same way. Thus, the objects that are near the camera ( = near the face of the cube that we can’t see) are big, the others are smaller. Seems like real life !
+In this image, the **frustum is now a perfect cube** (between -1 and 1 on all axes, it’s a little bit hard to see it), and **all blue objects have been deformed** in the same way. Thus, the objects that are near the camera ( = near the face of the cube that we can’t see) are big, the others are smaller. Seems like real life !
 
 Let’s see what it looks like from the “behind” the frustum :
 
