@@ -55,11 +55,15 @@ int main(void)
     // This line ensures that we can capture the escape key being pressed below
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 
-    // Drak bluw background
+    // Drak blue background
     glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
 
+    // END Window has been created
+    // ============================================================
+
     do{
-        // Clear the screen. It's not mentioned before Tutorial 02, but it can cause flickering, so it's there nonetheless.
+        // Clear the screen. It's not mentioned before Tutorial 02, 
+        // but it can cause flickering, so it's there nonetheless.
         glClear(GL_COLOR_BUFFER_BIT);
 
         // Draw nothing, see you in tutorial 2!
