@@ -1,4 +1,4 @@
-# How to opening a window
+# How to open a window
 ## Building on Linux
 
 ## Reference
