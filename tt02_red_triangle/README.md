@@ -1,7 +1,7 @@
 # How to create a triangle
 ## [Building on Linux](https://github.com/HugoNip/OpenGLLearning#building-on-linux)
 
-## Result
+## Output
 ![red_triangle.png](https://github.com/HugoNip/OpenGLLearning/blob/master/figures/red_triangle.png)
 
 ## Reference
