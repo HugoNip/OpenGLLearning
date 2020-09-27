@@ -134,6 +134,28 @@ set_target_properties(exett05 PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR
 create_target_launcher(exett05 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt05_textured_cube/")
 
 
+# Tutorial 6
+add_executable(exett06 tt06_keyboard_and_mouse/main.cpp
+						common/shader.cpp
+						common/shader.hpp
+						common/controls.cpp
+						common/controls.hpp
+						common/texture.cpp
+						common/texture.hpp
+	
+						tt06_keyboard_and_mouse/TransformVertexShader.vertexshader
+						tt06_keyboard_and_mouse/TextureFragmentShader.fragmentshader
+)
+target_link_libraries(exett06 ${ALL_LIBS})
+
+# Xcode and Visual working directories
+set_target_properties(exett06 PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tt06_keyboard_and_mouse/")
+create_target_launcher(exett06 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt06_keyboard_and_mouse/")
+
+
+
+
+
 
 
 
@@ -166,7 +188,10 @@ add_custom_command(
    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett05${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt05_textured_cube/"
 )
 
-
+add_custom_command(
+   TARGET exett06 POST_BUILD
+   COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett06${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt06_keyboard_and_mouse/"
+)
 
 
 elseif (${CMAKE_GENERATOR} MATCHES "Xcode" )
