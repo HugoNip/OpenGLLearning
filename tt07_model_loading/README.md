@@ -1,0 +1,11 @@
+# How to load model (.obj file)
+
+
+## [Building on Linux](https://github.com/HugoNip/OpenGLLearning#building-on-linux)
+
+## Output
+
+![moveanim.gif](https://github.com/HugoNip/OpenGLLearning/blob/master/figures/moveanim.gif)
+
+## Reference
+**Tutorial** [Homepage](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-7-model-loading/)    
