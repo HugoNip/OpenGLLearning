@@ -27,6 +27,7 @@ float horizontalAngle = 3.14f;
 // Initial vertical angle : none
 float verticalAngle = 0.0f;
 // Initial Field of View
+// FoV is the level of zoom. 80° = very wide angle, huge deformations. 60° - 45° : standard. 20° : big zoom.
 float initialFoV = 45.0f;
 
 float speed = 3.0f; // 3 units / second
@@ -51,6 +52,15 @@ void computeMatricesFromInputs(){
 	glfwSetCursorPos(window, 1024/2, 768/2);
 
 	// Compute new orientation
+	/**
+	 * (1) 1024/2 - xpos means : how far is the mouse from the center of the window ? 
+	 * 		The bigger this value, the more we want to turn.
+	 * (2) float(…) converts it to a floating-point number so that the multiplication goes well.
+	 * (3) mouseSpeed is just there to speed up or slow down the rotations. 
+	 * 		Fine-tune this at will, or let the user choose it.
+	 * (4) += : If you didn’t move the mouse, 1024/2-xpos will be 0, and horizontalAngle+=0 doesn’t change horizontalAngle. 
+	 * 		If you had a “=” instead, you would be forced back to your original orientation each frame, which isn’t good.
+	 */
 	horizontalAngle += mouseSpeed * float(1024/2 - xpos );
 	verticalAngle   += mouseSpeed * float( 768/2 - ypos );
 
@@ -90,7 +100,7 @@ void computeMatricesFromInputs(){
 
 	float FoV = initialFoV;// - 5 * glfwGetMouseWheel(); // Now GLFW 3 requires setting up a callback for this. It's a bit too complicated for this beginner's tutorial, so it's disabled instead.
 
-	// Projection matrix : 45� Field of View, 4:3 ratio, display range : 0.1 unit <-> 100 units
+	// Projection matrix : 45° Field of View, 4:3 ratio, display range : 0.1 unit <-> 100 units
 	ProjectionMatrix = glm::perspective(glm::radians(FoV), 4.0f / 3.0f, 0.1f, 100.0f);
 	// Camera matrix
 	ViewMatrix       = glm::lookAt(
