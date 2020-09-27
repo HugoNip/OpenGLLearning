@@ -2,7 +2,14 @@
 ## Introduction
 OpenGL (Open Graphics Library) is a cross-language, cross-platform application programming interface (API) for rendering 2D and 3D vector graphics. The API is typically used to interact with a graphics processing unit (GPU), to achieve hardware-accelerated rendering.
 
-## [How to create a shader](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-2-the-first-triangle/#shaders)
+## Tutorials
+[The Matrix and Quaternions FAQ](http://www.opengl-tutorial.org/assets/faq_quaternions/index.html#Q27)    
+[How to create a shader](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-2-the-first-triangle/#shaders)     
+[Tutorial 0: Installing OpenGL](http://www.codebind.com/linux-tutorials/install-opengl-ubuntu-linux/)      
+[Tutorial 1: Opening a window](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-1-opening-a-window/)    
+[Tutorial 2: Creating a triangle](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-2-the-first-triangle/)    
+[Tutorial 3 : Matrices](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-3-matrices/#fn:projection)     
+[Tutorial 4 : A Colored Cube](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-4-a-colored-cube/)    
 
 ## Building on Linux
 They are so many Linux variants out there that it’s impossible to list every possible platform. Adapt if required, and don’t hesitate to read your distribution’s documentation.
@@ -25,13 +32,6 @@ $ cd ~/Projects/OpenGLLearning/tt01_first_window // or cd ~/Projects/OpenGLLearn
 $ ./exett01  // A blue window should appear.
 ``` 
 
-## Tutorials
-[Tutorial 0: Installing OpenGL](http://www.codebind.com/linux-tutorials/install-opengl-ubuntu-linux/)    
-[Tutorial 1: Opening a window](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-1-opening-a-window/)    
-[Tutorial 2: Creating a triangle](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-2-the-first-triangle/)    
-[Tutorial 3 : Matrices](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-3-matrices/#fn:projection)     
-[Tutorial 4 : A Colored Cube](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-4-a-colored-cube/)
+## Requirements
 **GLFW** [Source](https://github.com/HugoNip/OpenGLLearning/tree/master/external/glfw-3.1.2), [Homepage](https://www.glfw.org/), [Compile](https://www.glfw.org/docs/latest/compile.html)    
 **OpenGL Mathematics (GLM)** [Source](https://github.com/HugoNip/OpenGLLearning/tree/master/external/glm-0.9.7.1), [Homepage](https://glm.g-truc.net/0.9.9/index.html)   
-[The Matrix and Quaternions FAQ](http://www.opengl-tutorial.org/assets/faq_quaternions/index.html#Q27)    
-
