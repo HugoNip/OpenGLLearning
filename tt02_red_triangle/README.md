@@ -1,4 +1,5 @@
 # How to create a triangle
+
 ## [Building on Linux](https://github.com/HugoNip/OpenGLLearning#building-on-linux)
 
 ## Output
