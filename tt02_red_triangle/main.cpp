@@ -76,18 +76,18 @@ int main( void )
     // you launch your application, all your shaders are recompiled.
 	GLuint programID = LoadShaders( "SimpleVertexShader.vertexshader", "SimpleFragmentShader.fragmentshader" );
 
-
+    /**
+     * Drawing our triangle
+     * 
+     * Create a triangle and give this triangle to OpenGL
+     */
     static const GLfloat g_vertex_buffer_data[] = {
         -1.0f, -1.0f, 0.0f,
          1.0f, -1.0f, 0.0f,
          0.0f,  1.0f, 0.0f,
     };
 
-    /**
-     * Drawing our triangle
-     * 
-     * The next step is to give this triangle to OpenGL
-     */
+
     // This will identify our vertex buffer
     GLuint vertexbuffer;
     // Generate 1 buffer, put the resulting identifier in vertexbuffer
@@ -112,7 +112,7 @@ int main( void )
         // It is done by using something called shaders.
         glUseProgram(programID);
 
-        // 1rst attribute buffer: vertices
+        // 1st attribute buffer: vertices
         glEnableVertexAttribArray(0);
         glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
         glVertexAttribPointer(

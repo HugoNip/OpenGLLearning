@@ -90,6 +90,13 @@ int main(void)
     // glm::mat4 Projection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, 0.0f, 100.0f); // In the world coordinates
 
     // Camera matrix
+    /**
+     * glm::mat4 CameraMatrix = glm::lookAt(
+     *     cameraPosition, // the position of your camera, in world space
+     *     cameraTarget,   // where you want to look at, in world space
+     *     upVector        // probably glm::vec3(0,1,0), but (0,-1,0) would make you looking upside-down, which can be great too
+     * );
+     */
     glm::mat4 View = glm::lookAt(
         glm::vec3(4, 3, 3), // Camera is at (4, 3, 3), in world space
         glm::vec3(0, 0, 0), // and looks at the origin
@@ -106,7 +113,7 @@ int main(void)
     /**
      * Drawing our triangle
      * 
-     * The next step is to give this triangle to OpenGL
+     * Create a triangle and give this triangle to OpenGL
      */
     static const GLfloat g_vertex_buffer_data[] = {
         -1.0f, -1.0f, 0.0f,
@@ -136,7 +143,7 @@ int main(void)
         // void (*)(GLint location, GLsizei count, GLboolean transpose, const GLfloat *value)
         glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &MVP[0][0]);
 
-        // 1rst attrbute buffer: vertices
+        // 1st attrbute buffer: vertices
         glEnableVertexAttribArray(0);
         glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
         glVertexAttribPointer(
