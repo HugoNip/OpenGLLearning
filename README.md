@@ -12,6 +12,8 @@ OpenGL (Open Graphics Library) is a cross-language, cross-platform application p
 [Tutorial 4 : A Colored Cube](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-4-a-colored-cube/)      
 [Tutorial 5 : A Textured Cube](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-5-a-textured-cube/)  
 [Tutorial 6 : Keyboard and Mouse](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-6-keyboard-and-mouse/)    
+[Tutorial 7 : Model Loading](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-7-model-loading/)     
+[Tutorial 8: Basic Shading](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-8-basic-shading/)     
 
 ## Building on Linux
 They are so many Linux variants out there that it’s impossible to list every possible platform. Adapt if required, and don’t hesitate to read your distribution’s documentation.
