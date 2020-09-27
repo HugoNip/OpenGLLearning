@@ -117,7 +117,21 @@ set_target_properties(exett04 PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR
 create_target_launcher(exett04 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt04_colored_cube/")
 
 
+# Tutorial 5
+add_executable(exett05 tt05_textured_cube/tutorial05.cpp
+						common/shader.cpp
+						common/shader.hpp
+						common/texture.cpp
+						common/texture.hpp
+						
+						tt05_textured_cube/TransformVertexShader.vertexshader
+						tt05_textured_cube/TextureFragmentShader.fragmentshader
+)
+target_link_libraries(exett05 ${ALL_LIBS})
 
+# Xcode and Visual working directories
+set_target_properties(exett05 PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tt05_textured_cube/")
+create_target_launcher(exett05 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt05_textured_cube/")
 
 
 
@@ -147,7 +161,10 @@ add_custom_command(
    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett04${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt04_colored_cube/"
 )
 
-
+add_custom_command(
+   TARGET exett05 POST_BUILD
+   COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett05${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt05_textured_cube/"
+)
 
 
 
