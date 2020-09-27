@@ -87,20 +87,34 @@ create_default_target_launcher(exett02 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE
 
 
 # Tutorial 3
-add_executable(exett03 tt03_Matrices/main.cpp
+add_executable(exett03 tt03_matrices/main.cpp
 						common/shader.cpp
 						common/shader.hpp
 
-						tt03_Matrices/SimpleTransform.vertexshader
-						tt03_Matrices/SingleColor.fragmentshader)
+						tt03_matrices/SimpleTransform.vertexshader
+						tt03_matrices/SingleColor.fragmentshader)
 
 #set_target_properties(exett03 PROPERTIES RUNTIME_OUTPUT_DIRECTORY /test1)
 target_link_libraries(exett03 ${ALL_LIBS})
 
 # Xcode and Visual working directories
-set_target_properties(exett03 PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tt03_Matrices/")
-create_target_launcher(exett03 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt03_Matrices/") # Visual
+set_target_properties(exett03 PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tt03_matrices/")
+create_target_launcher(exett03 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt03_matrices/") # Visual
 
+
+# Tutorial 4
+add_executable(exett04 tt04_colored_cube/main.cpp
+						common/shader.cpp
+						common/shader.hpp
+						
+						tt04_colored_cube/TransformVertexShader.vertexshader
+						tt04_colored_cube/ColorFragmentShader.fragmentshader
+)
+target_link_libraries(exett04 ${ALL_LIBS})
+
+# Xcode and Visual working directories
+set_target_properties(exett04 PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tt04_colored_cube/")
+create_target_launcher(exett04 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt04_colored_cube/")
 
 
 
@@ -125,7 +139,12 @@ add_custom_command(
 
 add_custom_command(
    TARGET exett03 POST_BUILD
-   COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett03${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt03_Matrices/"
+   COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett03${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt03_matrices/"
+)
+
+add_custom_command(
+   TARGET exett04 POST_BUILD
+   COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett04${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt04_colored_cube/"
 )
 
 
