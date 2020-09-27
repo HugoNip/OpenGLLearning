@@ -4,8 +4,8 @@ OpenGL (Open Graphics Library) is a cross-language, cross-platform application p
 
 ## Tutorials
 [How to install OpenGL](http://www.codebind.com/linux-tutorials/install-opengl-ubuntu-linux/)      
-[The Matrix and Quaternions FAQ](http://www.opengl-tutorial.org/assets/faq_quaternions/index.html#Q27)    
 [How to create a shader](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-2-the-first-triangle/#shaders)     
+[The Matrix and Quaternions FAQ](http://www.opengl-tutorial.org/assets/faq_quaternions/index.html#Q27)    
 [Tutorial 1: Opening a window](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-1-opening-a-window/)    
 [Tutorial 2: Creating a triangle](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-2-the-first-triangle/)    
 [Tutorial 3 : Matrices](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-3-matrices/#fn:projection)     
