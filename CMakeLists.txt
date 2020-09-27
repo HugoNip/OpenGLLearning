@@ -118,7 +118,7 @@ create_target_launcher(exett04 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt
 
 
 # Tutorial 5
-add_executable(exett05 tt05_textured_cube/tutorial05.cpp
+add_executable(exett05 tt05_textured_cube/main.cpp
 						common/shader.cpp
 						common/shader.hpp
 						common/texture.cpp
