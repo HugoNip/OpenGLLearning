@@ -188,7 +188,21 @@ int main(void)
         glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &MVP[0][0]);
 
         // Bind our texture in Texture Unit 0
+        /**
+         * glActiveTexture — select active texture unit
+         * void glActiveTexture(GLenum texture); 
+         * Parameters: texture
+         * Specifies which texture unit to make active. 
+         * The number of texture units is implementation dependent, 
+         * but must be at least 80. texture must be one of GL_TEXTUREi, 
+         * where i ranges from zero to the value of GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS 
+         * minus one. The initial value is GL_TEXTURE0.
+         */
         glActiveTexture(GL_TEXTURE0);
+        /**
+         * glBindTexture — bind a named texture to a texturing target
+         * void glBindTexture(GLenum target, GLuint texture);
+         */
         glBindTexture(GL_TEXTURE_2D, Texture);
 		// Set our "myTextureSampler" sampler to use Texture Unit 0
         glUniform1i(TextureID, 0);

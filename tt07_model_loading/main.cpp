@@ -128,7 +128,7 @@ int main(void)
         glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &MVP[0][0]);
 
         // Bind our texture in Texture Unit 0
-        glActiveTexture(GL_TEXTURE);
+        glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, Texture);
         // set our "myTextureSampler" sampler to use texture Unit 0
         glUniform1i(TextureID, 0);
