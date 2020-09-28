@@ -7,7 +7,8 @@ in vec3 Normal_cameraspace;
 in vec3 EyeDirection_cameraspace;
 in vec3 LightDirection_cameraspace;
 
-// Output EyeDirection_cameraspaceout vec3 color;
+// Output EyeDirection_cameraspaceout 
+out vec3 color;
 
 // Values that stay constant for the whole mesh
 uniform sampler2D myTextureSampler;
@@ -51,10 +52,10 @@ void main(){
     float cosAlpha = clamp(dot(E, R), 0, 1);
 
     color = 
-        // Ambient : siulates indirect lighting
+        // Ambient : simulates indirect lighting
         MaterialAmbientColor +
-        // Diffuse: "color" of the object
+        // Diffuse : "color" of the object
         MaterialDiffuseColor * LightColor * LightPower * cosTheta / (distance * distance) +
-        // Specular : reflective hight, like a mirror
+        // Specular : reflective hightlight, like a mirror
         MaterialSpecularColor * LightColor * LightPower * pow(cosAlpha, 5) / (distance * distance);
 }
