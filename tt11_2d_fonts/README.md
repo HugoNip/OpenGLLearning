@@ -1,4 +1,4 @@
-# How to do some basic shading
+# How to draw 2D text on top of 3D content
 
 ## 
 

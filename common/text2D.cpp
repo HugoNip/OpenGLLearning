@@ -35,6 +35,8 @@ void initText2D(const char * texturePath){
 
 }
 
+// The goal of printText2D will thus be to generate quads with 
+// the appropriate screen position and texture coordinates.
 void printText2D(const char * text, int x, int y, int size){
 
 	unsigned int length = strlen(text);
@@ -43,7 +45,22 @@ void printText2D(const char * text, int x, int y, int size){
 	std::vector<glm::vec2> vertices;
 	std::vector<glm::vec2> UVs;
 	for ( unsigned int i=0 ; i<length ; i++ ){
-		
+		// For each character, we compute the coordinates of the four vertices 
+		// that will define the quad, and add the two triangles
+		/**
+		 * 	(x,y+size)(x+size,y+size)(x+2*size,y+size)
+		 * 			________ ________
+		 * 		   |	   /|	    /|
+		 * 		   |	  /	|      / |
+		 * 		   |	 /	|	  /  |
+		 * 		   |	/	|	 /	 |
+		 * 		   |   /	|   /	 |
+		 * 		   |  /		|  /	 |
+		 * 		   | /		| /	     |
+		 * 		   |/_______|/_______|
+		 * 
+		 * 		(x,y)	(x+size,y)  (x+2*size,y)
+		 */
 		glm::vec2 vertex_up_left    = glm::vec2( x+i*size     , y+size );
 		glm::vec2 vertex_up_right   = glm::vec2( x+i*size+size, y+size );
 		glm::vec2 vertex_down_right = glm::vec2( x+i*size+size, y      );
@@ -57,6 +74,7 @@ void printText2D(const char * text, int x, int y, int size){
 		vertices.push_back(vertex_up_right);
 		vertices.push_back(vertex_down_left);
 
+		// Now for the UVs. The upper-left coordinate is computed as follows:
 		char character = text[i];
 		float uv_x = (character%16)/16.0f;
 		float uv_y = (character/16)/16.0f;
