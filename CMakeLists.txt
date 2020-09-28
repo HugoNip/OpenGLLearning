@@ -263,7 +263,27 @@ set_target_properties(exett09_several_objects PROPERTIES XCODE_ATTRIBUTE_CONFIGU
 create_target_launcher(exett09_several_objects WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt09_VBO_indexing/")
 
 
+# Tutorial 10
+add_executable(exett10 tt10_transparency/main.cpp
+						common/shader.cpp
+						common/shader.hpp
+						common/controls.cpp
+						common/controls.hpp
+						common/texture.cpp
+						common/texture.hpp
+						common/objloader.cpp
+						common/objloader.hpp
+						common/vboindexer.cpp
+						common/vboindexer.hpp
+	
+						tt10_transparency/StandardShading.vertexshader
+						tt10_transparency/StandardTransparentShading.fragmentshader
+)
+target_link_libraries(exett10 ${ALL_LIBS})
 
+# Xcode and Visual working directories
+set_target_properties(exett10 PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tt10_transparency/")
+create_target_launcher(exett10 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt10_transparency/")
 
 
 
@@ -328,6 +348,14 @@ add_custom_command(
    TARGET exett09_several_objects POST_BUILD
    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett09_several_objects${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt09_VBO_indexing/"
 )
+
+add_custom_command(
+   TARGET exett10 POST_BUILD
+   COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett10${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt10_transparency/"
+)
+
+
+
 
 
 
