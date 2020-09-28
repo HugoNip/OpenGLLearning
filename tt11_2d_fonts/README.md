@@ -9,4 +9,4 @@
 ![clock.PNG](https://github.com/HugoNip/OpenGLLearning/blob/master/figures/clock.PNG)
 
 ## Reference
-**Tutorial** [Homepage](http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-10-transparency/)    
+**Tutorial** [Homepage](http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-11-2d-text/)    
