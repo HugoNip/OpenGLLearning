@@ -24,4 +24,4 @@ Unintuitively, alpha = opaqueness, so alpha = 1 means fully opaque while alpha =
 ![ref09.png](https://github.com/HugoNip/OpenGLLearning/blob/master/figures/ref09.png)
 
 ## Reference
-**Tutorial** [Homepage](http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-9-vbo-indexing/)    
+**Tutorial** [Homepage](http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-10-transparency/)    
