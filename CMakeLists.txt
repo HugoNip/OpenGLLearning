@@ -174,6 +174,28 @@ set_target_properties(exett07 PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR
 create_target_launcher(exett07 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt07_model_loading/")
 
 
+# Tutorial 8
+add_executable(exett08 tt08_basic_shading/main.cpp
+						common/shader.cpp
+						common/shader.hpp
+						common/controls.cpp
+						common/controls.hpp
+						common/texture.cpp
+						common/texture.hpp
+						common/objloader.cpp
+						common/objloader.hpp
+						
+						tt08_basic_shading/StandardShading.vertexshader
+						tt08_basic_shading/StandardShading.fragmentshader
+)
+target_link_libraries(exett08 ${ALL_LIBS})
+
+# Xcode and Visual working directories
+set_target_properties(exett08 PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tt08_basic_shading/")
+create_target_launcher(exett08 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt08_basic_shading/")
+
+
+
 
 
 
@@ -216,6 +238,11 @@ add_custom_command(
 add_custom_command(
    TARGET exett07 POST_BUILD
    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett07${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt07_model_loading/"
+)
+
+add_custom_command(
+   TARGET exett08 POST_BUILD
+   COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett08${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt08_basic_shading/"
 )
 
 
