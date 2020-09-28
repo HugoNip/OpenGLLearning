@@ -19,10 +19,12 @@ void main(){
 
     // Light emission properties
     // You probably want to put them as uniforms
+    // LightColor and LightPower are set in the shader through GLSL uniforms.
     vec3 LightColor = vec3(1, 1, 1);
     float LightPower = 50.0f;
 
     // Material properties
+    // MaterialDiffuseColor is simply fetched from the texture.
     vec3 MaterialDiffuseColor = texture(myTextureSampler, UV).rgb;
     vec3 MaterialAmbientColor = vec3(0.1, 0.1, 0.1) * MaterialDiffuseColor;
     vec3 MaterialSpecularColor = vec3(0.3, 0.3, 0.3);
@@ -30,6 +32,7 @@ void main(){
     // Distance to the Light
     float distance = length(LightPosition_worldspace - Position_worldspace);
 
+    // We choose the camera space because it’s easy to compute the light’s position in this space
     // Normal of the computed fragment, in camera space
     vec3 n = normalize(Normal_cameraspace);
     // Direction of the light (from the fragment to the light)
@@ -41,6 +44,9 @@ void main(){
     //  - light is behind the triangle -> 0
     float cosTheta = clamp(dot(n, l), 0, 1);
 
+    // R is the direction in which the light reflects. 
+    // E is the inverse direction of the eye (just like we did for “l”); 
+    // If the angle between these two is little, it means we are looking straight into the reflection.
     // Eye vector (towards the camera)
     vec3 E = normalize(EyeDirection_cameraspace);
     // Direction in which the triangle reflects the light
@@ -51,11 +57,21 @@ void main(){
     //  - looking elsewhere -> < 1
     float cosAlpha = clamp(dot(E, R), 0, 1);
 
-    color = 
-        // Ambient : simulates indirect lighting
-        MaterialAmbientColor +
-        // Diffuse : "color" of the object
-        MaterialDiffuseColor * LightColor * LightPower * cosTheta / (distance * distance) +
-        // Specular : reflective hightlight, like a mirror
-        MaterialSpecularColor * LightColor * LightPower * pow(cosAlpha, 5) / (distance * distance);
+    // Diffuse : "color" of the object
+    // When light hits an object, an important fraction of it is reflected in all directions.
+    vec3 colorDiffuse = MaterialDiffuseColor * LightColor * LightPower * cosTheta / (distance * distance);
+
+    // Ambient : simulates indirect lighting
+    // We expect the back of Suzanne to be receive more light because in real life, 
+    // the lamp would light the wall behind it, which would in turn (slightly less) light the back of the object.
+    vec3 colorAmbient = MaterialAmbientColor;
+
+    // Specular : reflective hightlight, like a mirror
+    // The other part of light that is reflected is reflected mostly in the direction that is the reflection of the light on the surface. 
+    // This is the specular component.
+    // pow(cosAlpha,5) is used to control the width of the specular lobe. Increase 5 to get a thinner lobe.
+    vec3 colorSpecularColor = MaterialSpecularColor * LightColor * LightPower * pow(cosAlpha, 5) / (distance * distance);
+
+    color = colorDiffuse + colorAmbient + colorSpecularColor;        
+        
 }

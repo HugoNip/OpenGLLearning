@@ -51,7 +51,7 @@ and this is enough to get us started.
 
 ## Output
 
-![ref07.png](https://github.com/HugoNip/OpenGLLearning/blob/master/figures/ref07.png)
+![diffuse_ambiant_specular.PNG](https://github.com/HugoNip/OpenGLLearning/blob/master/figures/diffuse_ambiant_specular.PNG)
 
 ## Reference
 **Tutorial** [Homepage](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-8-basic-shading/)    
