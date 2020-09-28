@@ -314,6 +314,32 @@ set_target_properties(exett11 PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR
 create_target_launcher(exett11 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt11_2d_fonts/")
 
 
+# Tutorial 13
+add_executable(exett13 tt13_normal_mapping/main.cpp
+						common/shader.cpp
+						common/shader.hpp
+						common/controls.cpp
+						common/controls.hpp
+						common/texture.cpp
+						common/texture.hpp
+						common/objloader.cpp
+						common/objloader.hpp
+						common/vboindexer.cpp
+						common/vboindexer.hpp
+						common/text2D.hpp
+						common/text2D.cpp
+						common/tangentspace.hpp
+						common/tangentspace.cpp
+						
+						tt13_normal_mapping/NormalMapping.vertexshader
+						tt13_normal_mapping/NormalMapping.fragmentshader
+)
+target_link_libraries(exett13 ${ALL_LIBS})
+
+# Xcode and Visual working directories
+set_target_properties(exett13 PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tt13_normal_mapping/")
+create_target_launcher(exett13 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt13_normal_mapping/")
+
 
 
 
@@ -389,6 +415,13 @@ add_custom_command(
    TARGET exett11 POST_BUILD
    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett11${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt11_2d_fonts/"
 )
+
+add_custom_command(
+   TARGET exett13 POST_BUILD
+   COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett13${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt13_normal_mapping/"
+)
+
+
 
 
 
