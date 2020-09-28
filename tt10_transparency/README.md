@@ -1,4 +1,4 @@
-# How to do some basic shading
+# How to set texture to transparency
 
 ## The alpha channel
 The concept of the alpha channel is pretty simple. Instead of a writing an RGB result, you write an RGBA :

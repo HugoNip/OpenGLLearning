@@ -286,6 +286,37 @@ set_target_properties(exett10 PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR
 create_target_launcher(exett10 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt10_transparency/")
 
 
+# Tutorial 11
+add_executable(exett11 tt11_2d_fonts/main.cpp
+						common/shader.cpp
+						common/shader.hpp
+						common/controls.cpp
+						common/controls.hpp
+						common/texture.cpp
+						common/texture.hpp
+						common/objloader.cpp
+						common/objloader.hpp
+						common/vboindexer.cpp
+						common/vboindexer.hpp
+						common/text2D.hpp
+						common/text2D.cpp
+
+						tt11_2d_fonts/StandardShading.vertexshader
+						tt11_2d_fonts/StandardShading.fragmentshader
+						tt11_2d_fonts/TextVertexShader.vertexshader
+						tt11_2d_fonts/TextVertexShader.fragmentshader
+
+)
+target_link_libraries(exett11 ${ALL_LIBS})
+
+# Xcode and Visual working directories
+set_target_properties(exett11 PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tt11_2d_fonts/")
+create_target_launcher(exett11 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt11_2d_fonts/")
+
+
+
+
+
 
 
 
@@ -354,7 +385,10 @@ add_custom_command(
    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett10${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt10_transparency/"
 )
 
-
+add_custom_command(
+   TARGET exett11 POST_BUILD
+   COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett11${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt11_2d_fonts/"
+)
 
 
 
