@@ -6,6 +6,7 @@ OpenGL (Open Graphics Library) is a cross-language, cross-platform application p
 [How to install OpenGL](http://www.codebind.com/linux-tutorials/install-opengl-ubuntu-linux/)      
 [How to create a shader](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-2-the-first-triangle/#shaders)     
 [The Matrix and Quaternions FAQ](http://www.opengl-tutorial.org/assets/faq_quaternions/index.html#Q27)      
+[An FPS counter](http://www.opengl-tutorial.org/miscellaneous/an-fps-counter/)    
 [Tutorial 1: Opening a window](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-1-opening-a-window/)      
 [Tutorial 2: Creating a triangle](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-2-the-first-triangle/)      
 [Tutorial 3 : Matrices](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-3-matrices/#fn:projection)     
@@ -14,6 +15,7 @@ OpenGL (Open Graphics Library) is a cross-language, cross-platform application p
 [Tutorial 6 : Keyboard and Mouse](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-6-keyboard-and-mouse/)    
 [Tutorial 7 : Model Loading](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-7-model-loading/)     
 [Tutorial 8 : Basic Shading](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-8-basic-shading/)     
+[Tutorial 9 : VBO Indexing](http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-9-vbo-indexing/)    
 
 ## Building on Linux
 They are so many Linux variants out there that it’s impossible to list every possible platform. Adapt if required, and don’t hesitate to read your distribution’s documentation.

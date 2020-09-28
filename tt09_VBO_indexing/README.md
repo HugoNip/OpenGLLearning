@@ -7,7 +7,7 @@ In this tutorial, we introduce indexing, which enables to reuse the same vertex 
 
 ![indexing.png](https://github.com/HugoNip/OpenGLLearning/blob/master/figures/indexing.png)
 
-The index buffer contains integers, three for each triangle in the mesh, which reference the various **attribute buffers** (position, colour, UV coordinates, other UV coordinates, normal, ...). It’s a little bit like in the OBJ file format, with one huge difference : *there is only ONE index buffer*. This means that for a vertex to be shared between two triangles, all attributes must be the same.
+The index buffer contains integers, three for each triangle in the mesh, which reference the various **attribute buffers** (position, colour, UV coordinates, other UV coordinates, normal, ...). It’s a little bit like in the OBJ file format, with one huge difference : **there is only ONE index buffer**. This means that for a vertex to be shared between two triangles, all attributes must be the same.
 
 
 
@@ -16,7 +16,7 @@ The index buffer contains integers, three for each triangle in the mesh, which r
 
 ## Output
 
-![indexing.png](https://github.com/HugoNip/OpenGLLearning/blob/master/figures/indexing.png)
+![ref09.png](https://github.com/HugoNip/OpenGLLearning/blob/master/figures/ref09.png)
 
 ## Reference
 **Tutorial** [Homepage](http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-9-vbo-indexing/)    
