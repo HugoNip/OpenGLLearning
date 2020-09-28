@@ -195,6 +195,75 @@ set_target_properties(exett08 PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR
 create_target_launcher(exett08 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt08_basic_shading/")
 
 
+# Tutorial 9
+add_executable(exett09 tt09_VBO_indexing/main.cpp
+						common/shader.cpp
+						common/shader.hpp
+						common/controls.cpp
+						common/controls.hpp
+						common/texture.cpp
+						common/texture.hpp
+						common/objloader.cpp
+						common/objloader.hpp
+						common/vboindexer.cpp
+						common/vboindexer.hpp
+						
+						tt09_VBO_indexing/StandardShading.vertexshader
+						tt09_VBO_indexing/StandardShading.fragmentshader
+)
+target_link_libraries(exett09 ${ALL_LIBS})
+
+# Xcode and Visual working directories
+set_target_properties(exett09 PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tt09_VBO_indexing/")
+create_target_launcher(exett09 WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt09_VBO_indexing/")
+
+
+# Tutorial 9 - AssImp model loading
+add_executable(exett09_AssImp tt09_VBO_indexing/main_AssImp.cpp
+								common/shader.cpp
+								common/shader.hpp
+								common/controls.cpp
+								common/controls.hpp
+								common/texture.cpp
+								common/texture.hpp
+								common/objloader.cpp
+								common/objloader.hpp
+								
+								tt09_VBO_indexing/StandardShading.vertexshader
+								tt09_VBO_indexing/StandardShading.fragmentshader
+)
+target_link_libraries(exett09_AssImp ${ALL_LIBS} assimp)
+
+set_target_properties(exett09_AssImp PROPERTIES COMPILE_DEFINITIONS "USE_ASSIMP")
+# Xcode and Visual working directories
+set_target_properties(exett09_AssImp PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tt09_VBO_indexing/")
+create_target_launcher(exett09_AssImp WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt09_VBO_indexing/")
+
+
+# Tutorial 9 - several objects
+add_executable(exett09_several_objects tt09_VBO_indexing/main_several_objects.cpp
+										common/shader.cpp
+										common/shader.hpp
+										common/controls.cpp
+										common/controls.hpp
+										common/texture.cpp
+										common/texture.hpp
+										common/objloader.cpp
+										common/objloader.hpp
+										common/vboindexer.cpp
+										common/vboindexer.hpp
+										
+										tt09_VBO_indexing/StandardShading.vertexshader
+										tt09_VBO_indexing/StandardShading.fragmentshader
+)
+target_link_libraries(exett09_several_objects	${ALL_LIBS})
+
+# Xcode and Visual working directories
+set_target_properties(exett09_several_objects PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tt09_VBO_indexing/")
+create_target_launcher(exett09_several_objects WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tt09_VBO_indexing/")
+
+
+
 
 
 
@@ -245,7 +314,20 @@ add_custom_command(
    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett08${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt08_basic_shading/"
 )
 
+add_custom_command(
+   TARGET exett09 POST_BUILD
+   COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett09${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt09_VBO_indexing/"
+)
 
+add_custom_command(
+   TARGET exett09_AssImp POST_BUILD
+   COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett09_AssImp${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt09_VBO_indexing/"
+)
+
+add_custom_command(
+   TARGET exett09_several_objects POST_BUILD
+   COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/exett09_several_objects${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tt09_VBO_indexing/"
+)
 
 
 
