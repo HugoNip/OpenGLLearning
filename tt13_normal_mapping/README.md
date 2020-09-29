@@ -55,7 +55,7 @@ invTBN = transpose(TBN)
 
 ## Output
 
-![clock.PNG](https://github.com/HugoNip/OpenGLLearning/blob/master/figures/clock.PNG)
+![normalmappingwithspeculartexture.PNG](https://github.com/HugoNip/OpenGLLearning/blob/master/figures/normalmappingwithspeculartexture.PNG)
 
 ## Reference
 [**Tutorial 1 (OpenGL)**](http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-13-normal-mapping/)    

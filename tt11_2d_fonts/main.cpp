@@ -133,14 +133,15 @@ int main( void )
 	glUseProgram(programID);
 	GLuint LightID = glGetUniformLocation(programID, "LightPosition_worldspace");
 
-	// Initialze our little text library with the Holstein font
-	initText2D("Holstein.DDS");
+	// Initialize our little text library with the Holstein font
+	initText2D( "Holstein.DDS" );
 
 	// For speed computation
 	double lastTime = glfwGetTime();
 	int nbFrames = 0;
 
-	do{
+	do
+	{
 		// Measure speed
 		double currentTime = glfwGetTime();
 		nbFrames++;

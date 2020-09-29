@@ -21,7 +21,7 @@ using namespace glm;
 #include <common/objloader.hpp>
 #include <common/vboindexer.hpp>
 
-int main(void)
+int main( void )
 {
     // Initialise GLFW
 	if( !glfwInit() )
@@ -106,7 +106,8 @@ int main(void)
     std::vector<glm::vec3> indexed_normals;
     indexVBO(vertices, uvs, normals, indices, indexed_vertices, indexed_uvs, indexed_normals);
 
-    // Load it into VBO
+    // Load it into a VBO
+	
 	GLuint vertexbuffer;
 	glGenBuffers(1, &vertexbuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
@@ -141,6 +142,7 @@ int main(void)
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     do{
+
 		// Measure speed
 		double currentTime = glfwGetTime();
 		nbFrames++;
@@ -233,7 +235,9 @@ int main(void)
 		// Swap buffers
 		glfwSwapBuffers(window);
 		glfwPollEvents();
-    } while( glfwGetKey(window, GLFW_KEY_ESCAPE ) != GLFW_PRESS &&
+
+    } 
+	while( glfwGetKey(window, GLFW_KEY_ESCAPE ) != GLFW_PRESS &&
 		   glfwWindowShouldClose(window) == 0 );
 
 	// Cleanup VBO and shader

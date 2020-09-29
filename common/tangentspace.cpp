@@ -13,6 +13,7 @@ void computeTangentBasis(
 	std::vector<glm::vec3> & bitangents
 ){
 
+	// For each triangle, we compute the edge (deltaPos) and the deltaUV
 	for (unsigned int i=0; i<vertices.size(); i+=3 ){
 
 		// Shortcuts for vertices
@@ -33,9 +34,13 @@ void computeTangentBasis(
 		glm::vec2 deltaUV1 = uv1-uv0;
 		glm::vec2 deltaUV2 = uv2-uv0;
 
+		// We can now use our formula to compute the tangent and the bitangent
 		float r = 1.0f / (deltaUV1.x * deltaUV2.y - deltaUV1.y * deltaUV2.x);
 		glm::vec3 tangent = (deltaPos1 * deltaUV2.y   - deltaPos2 * deltaUV1.y)*r;
 		glm::vec3 bitangent = (deltaPos2 * deltaUV1.x   - deltaPos1 * deltaUV2.x)*r;
+
+		// Finally, we fill the tangents and bitangents buffers. Remember, 
+		// these buffers are not indexed yet, so each vertex has its own copy.
 
 		// Set the same tangent for all three vertices of the triangle.
 		// They will be merged later, in vboindexer.cpp
