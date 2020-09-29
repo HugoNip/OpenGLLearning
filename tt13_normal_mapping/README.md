@@ -19,7 +19,7 @@ This texture is mapped just like the diffuse one; the big problem is how to conv
  
 ## Tangent and Bitangent (Tangent Space)
 
-***Tangent Space is used to associate Texture (UV) Space to Model ([X, Y, Z]) Space***.
+***Tangent Space is used to associate Texture(UV) Space to Model[X, Y, Z] Space***.
 
 To define the tangent space, we need 3 vectors: Normal (blue), Tangent and Bitangent vectors.
 
@@ -48,10 +48,6 @@ Do have this inverse transformation, we simply have to take the matrix inverse, 
 invTBN = transpose(TBN)
 ```
 ![transposeTBN.png](https://github.com/HugoNip/OpenGLLearning/blob/master/figures/transposeTBN.png)    
-
-
-
-
 
 
 
