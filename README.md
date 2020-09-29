@@ -18,7 +18,6 @@ OpenGL (Open Graphics Library) is a cross-language, cross-platform application p
 [Tutorial 9 : VBO Indexing](http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-9-vbo-indexing/)    
 [Tutorial 10 : Transparency](http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-10-transparency/)     
 [Tutorial 11 : 2D text](http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-11-2d-text/)     
-[Tutorial 12 : OpenGL Extensions](http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-12-opengl-extensions/)     
 [Tutorial 13 : Normal Mapping](http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-13-normal-mapping/)     
 
 ## Building on Linux
